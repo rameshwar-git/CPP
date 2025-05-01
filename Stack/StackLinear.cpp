@@ -26,9 +26,12 @@ class Stack{
         }
         void display(int *arr){
             std::cout<<"Values in Stack:";
+            if(top<0)
+                std::cout<<"NULL";
+
             for(int i=top;i>=0;i--)
                 std::cout<<arr[i]<<" ";
-
+            std::cout<<std::endl;
         }
 };
 int main(){
@@ -37,9 +40,8 @@ int main(){
     Stack st;
 
     while(1){
-
         int opt;
-        std::cout<<"\nEnter Choice:\n1. Input\n2. Remove\n3.Display\n0. Exit\nChoice:";
+        std::cout<<"\nEnter Choice:\n1. Input\n2. Remove\n3. Display\n0. Exit\nChoice:";
         std::cin>>opt;
         switch(opt){
             case 1:
