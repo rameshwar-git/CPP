@@ -11,7 +11,7 @@ class Stack{
                 return;
             }
             int val;
-            cout<<"Enter Data:";
+            std::cout<<"Enter Data:";
             top++;
             std::cin>>val;
             arr[top]=val;
@@ -25,22 +25,22 @@ class Stack{
             top--;
         }
         void display(int *arr){
-            std:::cout<<"Values in Stack:";
+            std::cout<<"Values in Stack:";
             for(int i=top;i>=0;i--)
-                cout<<arr[i]<<" ";
+                std::cout<<arr[i]<<" ";
 
         }
-}
+};
 int main(){
-    
+
     int arr[MAX];
     Stack st;
-    
+
     while(1){
 
         int opt;
         std::cout<<"\nEnter Choice:\n1. Input\n2. Remove\n3.Display\n0. Exit\nChoice:";
-        cin>>opt;
+        std::cin>>opt;
         switch(opt){
             case 1:
                 st.input(arr);
