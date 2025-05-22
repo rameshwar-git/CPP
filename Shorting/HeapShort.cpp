@@ -1,7 +1,7 @@
 #include<iostream>
 
 using namespace std;
- class HeapShort{
+class HeapShort{
     public:
         void heapshort(int *arr,int n){
             for(int i=n/2;i>=0;i--){
@@ -19,8 +19,10 @@ using namespace std;
             int l=2*i+1;
             int r=2*i+2;
             if(l<n && arr[l]>arr[largest])
-                largest=1;
-            if(largest!=l){
+                largest=l;
+            if(r<n && arr[r]>arr[largest])
+                largest=r;
+            if(largest!=i){
                 int temp=arr[i];
                 arr[i]=arr[largest];
                 arr[largest]=temp;
@@ -30,13 +32,13 @@ using namespace std;
         void display(int *arr,int n){
             for(int i=0;i<n;i++)
                 cout<<arr[i]<<" ";
+            cout<<endl;
         }
  };
  int main(){
-    
     int arr[]={9,4,3,8,10,2,5};
     int n=7;
-    
+
     HeapShort h;
     h.display(arr,7);
     h.heapshort(arr,7);
